@@ -76,7 +76,7 @@ html,body{height:100%;font-family:'DM Sans',sans-serif;background:var(--bg);colo
 .logo{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--accent);padding:0 8px 20px;letter-spacing:-0.5px}
 .logo span{color:var(--accent2)}
 .logo small{display:block;font-size:11px;font-weight:400;color:var(--muted);font-family:'DM Sans',sans-serif;letter-spacing:0;margin-top:2px}
-.nav-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:var(--r3);cursor:pointer;font-size:14px;color:var(--label);transition:all 0.15s;border:none;background:none;width:100%;text-align:left;font-family:'DM Sans',sans-serif}
+.nav-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:var(--r3);cursor:pointer;font-size:14px;color:var(--label);transition:all 0.15s;border:none;background:none;width:100%}
 .nav-item:hover{background:var(--surface2);color:var(--text)}
 .nav-item.active{background:rgba(124,110,247,0.15);color:var(--accent);font-weight:500}
 .badge{margin-left:auto;background:var(--accent);color:#fff;border-radius:20px;padding:1px 7px;font-size:11px;font-weight:500}
@@ -85,7 +85,7 @@ html,body{height:100%;font-family:'DM Sans',sans-serif;background:var(--bg);colo
 .main{display:flex;flex-direction:column;overflow:hidden;width:100%}
 .topbar{padding:20px 28px 16px;display:flex;align-items:center;gap:16px;border-bottom:1px solid var(--border);background:var(--surface)}
 .topbar h1{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;flex:1;margin-left:60px}
-.search-box{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r3);padding:8px 14px;color:var(--text);font-size:13px;font-family:'DM Sans',sans-serif;width:200px;outline:none;transition:border 0.15s}
+.search-box{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r3);padding:8px 14px;color:var(--text);font-size:13px;font-family:'DM Sans',sans-serif;width:200px;outline:none}
 .search-box:focus{border-color:var(--accent)}
 .search-box::placeholder{color:var(--muted)}
 .btn{padding:8px 18px;border-radius:var(--r3);border:none;cursor:pointer;font-size:13px;font-weight:500;font-family:'DM Sans',sans-serif;transition:all 0.15s}
@@ -110,7 +110,7 @@ html,body{height:100%;font-family:'DM Sans',sans-serif;background:var(--bg);colo
 .task-item:hover{border-color:var(--border2)}
 .task-item.done{opacity:0.45}
 .task-item.done .task-name{text-decoration:line-through;color:var(--muted)}
-.check{width:18px;height:18px;border-radius:50%;border:2px solid var(--border2);display:flex;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer;transition:all 0.15s;font-size:11px;color:#fff}
+.check{width:18px;height:18px;border-radius:50%;border:2px solid var(--border2);display:flex;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer;transition:all 0.15s;font-size:11px;color:var(--accent)}
 .check:hover{border-color:var(--accent)}
 .check.checked{background:var(--accent);border-color:var(--accent)}
 .task-name{font-size:14px;flex:1}
@@ -129,35 +129,24 @@ html,body{height:100%;font-family:'DM Sans',sans-serif;background:var(--bg);colo
 .task-input:focus{border-color:var(--accent)}
 .task-input::placeholder{color:var(--muted)}
 select.sel{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r3);padding:9px 10px;color:var(--label);font-size:13px;outline:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:border 0.15s}
+.sel:focus{border-color:var(--accent)}
 .right-col{display:flex;flex-direction:column;gap:16px;overflow-y:auto;max-height:100%;min-width:0}
 .chart-wrap{position:relative;width:100%;flex-shrink:0}
 
-/* AI Panel */
+/* Smart Suggestions Panel */
 .ai-panel{background:var(--surface);border:1px solid rgba(124,110,247,0.35);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:12px;position:relative;overflow:hidden;z-index:1}
 .ai-panel::before{content:'';position:absolute;top:-40px;right:-40px;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle,rgba(124,110,247,0.06) 0%,transparent 70%);pointer-events:none}
 .ai-panel-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;display:flex;align-items:center;gap:10px}
 .ai-spark{width:22px;height:22px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:5px;font-size:12px;display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0}
-.ai-input-row{display:flex;gap:8px}
-.ai-textarea{flex:1;background:var(--surface2);border:1px solid rgba(124,110,247,0.25);border-radius:var(--r3);padding:10px 14px;color:var(--text);font-size:13px;font-family:'DM Sans',sans-serif;outline:none;resize:none;transition:border 0.15s}
-.ai-textarea:focus{border-color:var(--accent)}
-.ai-textarea::placeholder{color:var(--muted)}
-.btn-ai{background:linear-gradient(135deg,var(--accent),#5b4fd4);color:#fff;border:none;border-radius:var(--r3);padding:10px 18px;font-size:13px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.15s}
-.btn-ai:hover{opacity:0.9;transform:translateY(-1px)}
-.btn-ai:disabled{opacity:0.5;cursor:not-allowed;transform:none}
-.ai-response{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r3);padding:14px;font-size:13px;color:var(--label);line-height:1.7;max-height:200px;overflow-y:auto}
-.ai-response.loading{display:flex;align-items:center;gap:10px}
-.dots{display:flex;gap:5px}
-.dots span{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:bounce 1.2s infinite}
-.dots span:nth-child(2){animation-delay:0.2s}
-.dots span:nth-child(3){animation-delay:0.4s}
-@keyframes bounce{0%,80%,100%{transform:scale(0.6);opacity:0.4}40%{transform:scale(1);opacity:1}}
+.quick-prompts{display:flex;flex-wrap:wrap;gap:6px}
+.qp{background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:5px 12px;font-size:12px;color:var(--muted);cursor:pointer;transition:all 0.15s;white-space:nowrap}
+.qp:hover{border-color:var(--accent);color:var(--accent);background:rgba(124,110,247,0.1)}
 .suggestion-chips{display:flex;flex-direction:column;gap:7px;max-height:200px;overflow-y:auto}
 .chip{background:rgba(124,110,247,0.08);border:1px solid rgba(124,110,247,0.2);border-radius:var(--r3);padding:10px 14px;font-size:13px;color:var(--label);cursor:pointer;display:flex;align-items:center;gap:8px;transition:all 0.15s}
 .chip:hover{background:rgba(124,110,247,0.15);border-color:var(--accent);color:var(--text)}
 .chip-add{margin-left:auto;font-size:11px;color:var(--accent);font-weight:500;flex-shrink:0;background:rgba(124,110,247,0.15);padding:2px 8px;border-radius:20px}
-.quick-prompts{display:flex;flex-wrap:wrap;gap:6px}
-.qp{background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:5px 12px;font-size:12px;color:var(--muted);cursor:pointer;transition:all 0.15s;white-space:nowrap}
-.qp:hover{border-color:var(--accent);color:var(--accent)}
+.ai-message{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r3);padding:14px;font-size:13px;color:var(--label);line-height:1.7;font-style:italic}
+
 .timer-wrap{display:flex;flex-direction:column;align-items:center;gap:10px;padding:8px 0}
 .timer-num{font-family:'Syne',sans-serif;font-size:36px;font-weight:800;color:var(--accent);letter-spacing:3px}
 .timer-sub{font-size:12px;color:var(--muted)}
@@ -182,7 +171,7 @@ select.sel{background:var(--surface2);border:1px solid var(--border);border-radi
   <div class="sidebar-overlay" id="overlay" onclick="closeSidebar()"></div>
   
   <div class="sidebar" id="sidebar">
-    <div class="logo">Do<span>Flow</span><small>✦ AI-Powered</small></div>
+    <div class="logo">Do<span>Flow</span><small>✦ Smart Tasks</small></div>
     <button class="nav-item active" onclick="setView('today',this)">☀ Today <span class="badge" id="b-today">0</span></button>
     <button class="nav-item" onclick="setView('all',this)">◉ All Tasks <span class="badge g" id="b-all">0</span></button>
     <button class="nav-item" onclick="setView('done',this)">✓ Completed</button>
@@ -238,18 +227,14 @@ select.sel{background:var(--surface2);border:1px solid var(--border);border-radi
 
         <div class="right-col">
           <div class="ai-panel">
-            <div class="ai-panel-title"><span class="ai-spark">✦</span> AI Task Assistant</div>
+            <div class="ai-panel-title"><span class="ai-spark">✦</span> Smart Suggestions</div>
             <div class="quick-prompts">
-              <span class="qp" onclick="setPrompt('Suggest 3 productive work tasks for today')">Work tasks</span>
-              <span class="qp" onclick="setPrompt('What should I prioritize from my current task list?')">Prioritize</span>
-              <span class="qp" onclick="setPrompt('Give me 3 personal wellness tasks for today')">Wellness</span>
-              <span class="qp" onclick="setPrompt('Help me break a big project into smaller actionable tasks')">Break down project</span>
+              <span class="qp" onclick="showSuggestedTask('Design dashboard','work','high')">Work tasks</span>
+              <span class="qp" onclick="showSuggestedTask('Prioritize workflow','work','high')">Prioritize</span>
+              <span class="qp" onclick="showSuggestedTask('Exercise routine','personal','med')">Wellness</span>
+              <span class="qp" onclick="showSuggestedTask('Daily reflection','personal','med')">Reflection</span>
             </div>
-            <div class="ai-input-row">
-              <textarea class="ai-textarea" id="ai-input" rows="2" placeholder="Ask AI: suggest tasks, prioritize your day, plan a project..."></textarea>
-              <button class="btn-ai" id="ai-btn" onclick="askAI()">Ask ✦</button>
-            </div>
-            <div id="ai-response" style="display:none" class="ai-response"></div>
+            <div class="ai-message" id="ai-message" style="display:none"></div>
             <div id="ai-chips" class="suggestion-chips" style="display:none"></div>
           </div>
 
@@ -329,8 +314,8 @@ function addTask(){
 }
 function toggleTask(id){const t=tasks.find(t=>t.id===id);if(t){t.done=!t.done;renderAll();}}
 function delTask(id){tasks=tasks.filter(t=>t.id!==id);renderAll();}
-function addFromChip(name,prio){
-  tasks.push({id:nid++,name,done:false,prio:prio||'med',cat:'work'});
+function addFromChip(name,prio,cat){
+  tasks.push({id:nid++,name,done:false,prio:prio||'med',cat:cat||'work'});
   renderAll();
 }
 function getFiltered(){
@@ -384,77 +369,47 @@ function updateCharts(){
 }
 function renderAll(){renderTasks();}
 
-function setPrompt(p){document.getElementById('ai-input').value=p;}
-
-async function askAI(){
-  const inp=document.getElementById('ai-input');
-  const prompt=inp.value.trim();
-  if(!prompt)return;
-  const btn=document.getElementById('ai-btn');
-  btn.disabled=true;btn.textContent='...';
-  const resp=document.getElementById('ai-response');
-  const chips=document.getElementById('ai-chips');
-  resp.style.display='flex';resp.className='ai-response loading';
-  resp.innerHTML='<div class="dots"><span></span><span></span><span></span></div><span style="color:var(--muted);font-size:13px">AI is thinking...</span>';
-  chips.style.display='none';chips.innerHTML='';
-
-  const taskSummary=tasks.map(t=>`- ${t.name} [${t.prio} priority, ${t.cat}, ${t.done?'done':'pending'}]`).join('\n');
-
-  try{
-    const res=await fetch('https://api.anthropic.com/v1/messages',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({
-        model:'claude-sonnet-4-20250514',
-        max_tokens:1000,
-        system:`You are DoFlow AI, a smart productivity assistant inside a to-do app.
-The user's current tasks:
-${taskSummary}
-
-When suggesting tasks, respond ONLY in this JSON format (no markdown, no extra text):
-{
-  "message": "A brief helpful message (1-2 sentences)",
-  "suggestions": [
-    {"task": "Task name", "priority": "high|med|low", "reason": "Brief reason max 8 words"},
-    {"task": "Task name", "priority": "high|med|low", "reason": "Brief reason max 8 words"},
-    {"task": "Task name", "priority": "high|med|low", "reason": "Brief reason max 8 words"}
+// Smart Suggestions (Local - No API needed)
+const suggestions = {
+  'Design dashboard': [
+    {task:'Create wireframes',prio:'high',reason:'Foundation for design',cat:'work'},
+    {task:'Define color scheme',prio:'med',reason:'Visual consistency',cat:'work'},
+    {task:'Design components library',prio:'high',reason:'Reusable elements',cat:'work'}
+  ],
+  'Prioritize workflow': [
+    {task:'Review task deadlines',prio:'high',reason:'Time management',cat:'work'},
+    {task:'Identify blockers',prio:'high',reason:'Clear obstacles',cat:'work'},
+    {task:'Schedule focus time',prio:'med',reason:'Deep work sessions',cat:'work'}
+  ],
+  'Exercise routine': [
+    {task:'Morning cardio (30m)',prio:'med',reason:'Daily fitness',cat:'personal'},
+    {task:'Strength training',prio:'med',reason:'Build endurance',cat:'personal'},
+    {task:'Stretch & cool down',prio:'low',reason:'Recovery time',cat:'personal'}
+  ],
+  'Daily reflection': [
+    {task:'Journal today\'s wins',prio:'low',reason:'Mindfulness practice',cat:'personal'},
+    {task:'Plan tomorrow\'s tasks',prio:'med',reason:'Stay organized',cat:'personal'},
+    {task:'Meditate (10m)',prio:'med',reason:'Mental clarity',cat:'personal'}
   ]
-}
+};
 
-For general questions:
-{
-  "message": "Your helpful response here",
-  "suggestions": []
-}
-
-Be concise, practical, and motivating.`,
-        messages:[{role:'user',content:prompt}]
-      })
-    });
-    const data=await res.json();
-    const text=data.content.map(i=>i.text||'').join('').replace(/```json|```/g,'').trim();
-    let parsed;
-    try{parsed=JSON.parse(text);}catch(e){parsed={message:text,suggestions:[]};}
-
-    resp.className='ai-response';
-    resp.style.display='block';
-    resp.innerHTML=`<span style="color:var(--accent2);font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.8px">✦ DoFlow AI</span><br><br>${parsed.message||text}`;
-
-    if(parsed.suggestions&&parsed.suggestions.length){
-      chips.style.display='flex';
-      chips.innerHTML=parsed.suggestions.map(s=>`
-        <div class="chip" onclick="addFromChip('${s.task.replace(/'/g,"\\'")}','${s.priority}')">
-          <span class="prio-dot ${s.priority}" style="flex-shrink:0;margin-top:2px"></span>
-          <span style="flex:1">${s.task}<br><span style="font-size:11px;color:var(--muted)">${s.reason}</span></span>
-          <span class="chip-add">+ Add</span>
-        </div>`).join('');
-    }
-  }catch(e){
-    resp.className='ai-response';
-    resp.style.display='block';
-    resp.innerHTML=`<span style="color:var(--danger)">Could not connect to AI. Please check your connection and try again.</span>`;
+function showSuggestedTask(title, cat, prio) {
+  const msg = document.getElementById('ai-message');
+  const chips = document.getElementById('ai-chips');
+  
+  msg.style.display='block';
+  msg.textContent = `✦ Here are some suggested tasks for "${title}":`;
+  
+  const taskSuggestions = suggestions[title] || [];
+  if(taskSuggestions.length){
+    chips.style.display='flex';
+    chips.innerHTML = taskSuggestions.map(s=>`
+      <div class="chip" onclick="addFromChip('${s.task.replace(/'/g,"\\'")}','${s.prio}','${s.cat}')">
+        <span class="prio-dot ${s.prio}" style="flex-shrink:0;margin-top:2px"></span>
+        <span style="flex:1">${s.task}<br><span style="font-size:11px;color:var(--muted)">${s.reason}</span></span>
+        <span class="chip-add">+ Add</span>
+      </div>`).join('');
   }
-  btn.disabled=false;btn.textContent='Ask ✦';
 }
 
 function toggleTimer(){
@@ -479,7 +434,7 @@ window.addEventListener('load',()=>{
   wkChart=new Chart(document.getElementById('wk-chart'),{
     type:'bar',
     data:{labels:days,datasets:[{data:[3,5,4,7,6,4,tasks.filter(t=>t.done).length],backgroundColor:['#2d2a50','#2d2a50','#2d2a50','#2d2a50','#2d2a50','#2d2a50','#7c6ef7'],borderRadius:5,borderSkipped:false}]},
-    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#6b6b85',font:{size:11}},grid:{display:false},border:{display:false}},y:{ticks:{color:'#6b6b85',font:{size:10},stepSize:2},grid:{color:'#2a2a38',drawBorder:false}}}}
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#6b6b85',font:{size:11}},grid:{display:false},border:{display:false}},y:{ticks:{color:'#6b6b85',font:{size:11}},beginAtZero:true,grid:{color:'#2a2a38'}}}}
   });
   pieChart=new Chart(document.getElementById('pie-chart'),{
     type:'doughnut',
